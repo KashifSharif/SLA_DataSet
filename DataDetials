@@ -1,0 +1,23 @@
+1.	Data Generation Details:
+To facilitate meta-learning on key 6G network performance indicators, targeted synthetic data was procedurally generated. Four primary KPIs were selected as prediction targets - two from the radio access network (RAN) domain and two from the core network (CN) domain. For the RAN, peak data rate and radio latency were chosen as a key quality of service indicators for next-generation mobile broadband applications. Within the CN, peak bandwidth and end-to-end availability were identified as critical for supporting RAN traffic rates and reliability specifications.
+Six distinct data generation tasks were coded as parameterized Python scripts for each of the four target KPIs and also for their resources. Controlling statistical properties encoded different network configurations. This produced 48 synthetic 6G scenario datasets with variability on both the independent input features as well as the labeled KPI targets. Output was stored as serialized comma-separated values (CSV) text files. Each file contained 100,000 samples with diverse input feature dimensions and one target KPI variable. These large-scale simulated datasets aim to improve generalization and adaptation for machine learning algorithms designed for 6G network optimizations.
+
+2.	6G Key Performance Indicators and their Data Characteristics:
+
+2.1. 6G KPIs for RAN Domain:
+We have chosen peak data rate and latency KPIs from the RAN domain. Their definitions and synthetic data characteristics are described below;
+
+2.1.1. Peak Data Rate Parameter:
+Peak data rate is the ratio of maximum bytes transferred per unit time. In 6G networks, the peak data rate is about 1 Tb/s. The synthetic data input features consist of the number of physical resource blocks (PRBs), the number of symbols per PRBs, the number of bits per symbol, the number of antennas, the number of layers, and modulation orders. Additionally, the data features for the resources are peak data rate, bits per symbol, number of antennas, number of layers, storage resources, and bandwidth. 
+
+2.1.2. Latency Parameter:
+Depending on the distance traveled and connection speed, a wireless loop’s latency will vary. In 6G networks, it is specified as 10-100 μs. The synthetic data input features are propagation delay, transmission delay, processing delay, and queuing delay. Additionally for the resources, the features of data are total latency, propagation delay, transmission delay, processing delay, queuing delay, storage resources, and bandwidth.
+
+2.2. 6G KPIs for CN Domain:
+We have chosen peak bandwidth and availability KPIs from the CN domain. Their definitions and synthetic data characteristics are described below;
+
+2.2.1. Peak Bandwidth Parameter:
+It is defined as the maximum capacity to transfer data in a specified time. In a 6G wireless network, the maximum capacity is up to 100 GHz. The synthetic data features for peak bandwidth and its resources are channel bandwidth, modulation coding scheme, and number of resource blocks.
+
+2.2.2. Availability Parameter:
+6G availability is a metric that quantifies the percentage of time a 6G network is operational and capable of providing services to users without interruption. The synthetic data features for availability and its resources are peak bandwidth and number of antennas.
